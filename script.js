@@ -33,7 +33,7 @@ const init = () => {
     // updating context with tool defaults
     context.strokeStyle = penColorSelect.value;
     context.lineWidth = penSizeSelect.value;
-    context.backgroundColor = backgroundColorSelect.value;
+    canvas.style.backgroundColor = backgroundColorSelect.value;
 };
 
 const is_touch_event = () => {
@@ -119,6 +119,7 @@ backgroundColorSelect.addEventListener("change", () => {
 clearButton.addEventListener("click", () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
   backgroundColorSelect.value = "#ffffff";
+  canvas.style.backgroundColor = backgroundColorSelect.value;
   penColorSelect.value = "#0";
   penSizeSelect.value = "4";
 });
