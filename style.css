@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans Unicode', Arial, sans-serif;
+}
+
+#paintArea {
+    border: 8px solid #788eff;
+    height: 70vh;
+}
+
+.options {
+    height: 30vh;
+    background-color: #788eff;
+    padding: 30px;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.option-row {
+    display: inline-flex;
+    width: 100%;
+}
+
+.option-row button {
+    background-color: #ffffff;
+    color: #788eff;
+    padding: 8px;
+    margin-inline-end: 20px;
+}
+.option-row h5 {
+    margin-bottom: 5px;
+}
+
+.tool {
+    margin-inline-end: 80px;
+}
+
