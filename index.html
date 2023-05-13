@@ -12,29 +12,53 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="paintArea">
-      <canvas id="canvas"></canvas>
+    <div id="header">
+        <h1>px Paint</h1>
     </div>
-    <div class="options">
-        <div class="option-row">
-            <div class="tool">
-                <h5>Size:</h5>
-                <input type="range" id="pen-slider" />
-            </div>
-            <div class="tool">
-                <h5>Color:</h5>
-                <input type="color" id="color-input"/>
-            </div>
-            <div class="tool">
-                <h5>Background Color:</h5>
-                <input type="color" id="color-background" />
-            </div>
+    <div id="app">
+        <div id="paint-area">
+            <canvas id="canvas"></canvas>
         </div>
-        <br></br>
-        <div class="option-row">
-            <button id="button-clear">Clear</button>
-            <button id="button-pen">Pen</button>
-            <button id="button-erase">Erase</button>
+        <div class="toolbar">
+            <div class="row">
+                <label class="title">Options</label>
+                <ul class="options">
+                    <li class="option active tool" id="brush">
+                        <img src="icons/brush.svg" alt="brush" />
+                        <span>Brush</span>
+                    </li>
+                    <li class="option tool" id="eraser">
+                        <img src="icons/eraser.svg" alt="eraser" />
+                        <span>Eraser</span>
+                    </li>
+                    <li class="option">
+                        <input type="range" id="pen-slider" min="1" max="30" value="5">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <label class="title">Colors</label>
+                <ul class="options">
+                    <li id="brush-color-select">
+                        <input type="color" id="color-input"/>
+                        <span>Brush</span>
+                    </li>
+                    <li id="fill-color-select">
+                        <input type="color" id="color-fill" />
+                        <span>Fill</span>
+                    </li>
+                    <li id="background-color-select">
+                        <input type="color" id="color-background" />
+                        <span>Background</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <button id="button-clear">Clear</button>
+                <button id="button-save">Save as Image</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

@@ -4,8 +4,8 @@ let backgroundColorSelect = document.getElementById("color-background");
 let penColorSelect = document.getElementById("color-input");
 let penSizeSelect = document.getElementById("pen-slider");
 let clearButton = document.getElementById("button-clear");
-let eraseButton = document.getElementById("button-erase");
-let penButton = document.getElementById("button-pen");
+let eraseButton = document.getElementById("eraser");
+let penButton = document.getElementById("brush");
 
 // canvas
 let context = canvas.getContext("2d");

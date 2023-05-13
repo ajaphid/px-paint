@@ -5,35 +5,69 @@
     font-family: 'Lucida Sans Unicode', Arial, sans-serif;
 }
 
-#paintArea {
+body {
+    margin-inline: 10vw;
+    margin-top: 5vh;
+    color: #788eff;
+}
+
+#app {
+    display: flex;
+}
+
+#header {
+    padding-bottom: 20px;
+}
+
+.row {
+    color: #ffffff;
+}
+
+#paint-area {
     border: 8px solid #788eff;
     height: 70vh;
+    width: 60vw;
 }
 
-.options {
-    height: 30vh;
+.toolbar {
+    height: 70vh;
+    width: 20vw;
     background-color: #788eff;
+    color: "#ffffff";
     padding: 30px;
-    color: #ffffff;
-    font-size: 24px;
+    position: relative;
 }
 
-.option-row {
-    display: inline-flex;
-    width: 100%;
-}
-
-.option-row button {
+.toolbar button {
     background-color: #ffffff;
     color: #788eff;
     padding: 8px;
-    margin-inline-end: 20px;
+    border: none
 }
-.option-row h5 {
+.toolbar h5 {
     margin-bottom: 5px;
+    color: #ffffff;
 }
 
 .tool {
-    margin-inline-end: 80px;
+    padding-bottom: 20px;
+}
+
+#button-container {
+    padding-top: 20px;
+}
+
+#button-container button {
+    color: #ffffff;
+    background-color: #788eff;
+    padding: 8px;
+    margin-inline-end: 20px;
+    border: none
+}
+
+#option-buttons {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
 }
 
