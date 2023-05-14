@@ -1,11 +1,13 @@
 // html element refs
 let canvas = document.getElementById("canvas");
-let backgroundColorSelect = document.getElementById("color-background");
-let penColorSelect = document.getElementById("color-input");
-let penSizeSelect = document.getElementById("pen-slider");
+let backgroundColorSelect = document.getElementById("background-color");
+let penColorSelect = document.getElementById("brush-color");
+let penSizeSelect = document.getElementById("size-slider");
 let clearButton = document.getElementById("button-clear");
 let eraseButton = document.getElementById("eraser");
 let penButton = document.getElementById("brush");
+let saveButton = document.getElementById("button-save");
+let toolBtns = document.getElementsByClassName("tool");
 
 // canvas
 let context = canvas.getContext("2d");
@@ -90,13 +92,18 @@ canvas.addEventListener("mouseup", stopDrawing);
 canvas.addEventListener("touchend", stopDrawing);
 canvas.addEventListener("mouseleave", stopDrawing);
 
+
 // switch to pen mode
 penButton.addEventListener("click", () => {
+  eraseButton.style.fontWeight = "normal";
+  penButton.style.fontWeight = "bolder";
   erase_bool = false;
 });
 
 // switch to eraser mode
 eraseButton.addEventListener("click", () => {
+  eraseButton.style.fontWeight = "bolder";
+  penButton.style.fontWeight = "normal";
   erase_bool = true;
 });
 
@@ -119,9 +126,23 @@ backgroundColorSelect.addEventListener("change", () => {
 clearButton.addEventListener("click", () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
   backgroundColorSelect.value = "#ffffff";
-  canvas.style.backgroundColor = backgroundColorSelect.value;
   penColorSelect.value = "#0";
   penSizeSelect.value = "4";
+  // updating context with tool defaults
+  context.strokeStyle = penColorSelect.value;
+  context.lineWidth = penSizeSelect.value;
+  canvas.style.backgroundColor = backgroundColorSelect.value;
+  // reset back to draw mode
+  eraseButton.style.fontWeight = "normal";
+  penButton.style.fontWeight = "bolder";
+  erase_bool = false;
+});
+
+saveButton.addEventListener("click", () => {
+  const link = document.createElement("a"); // creating <a> element
+  link.download = `${Date.now()}.jpg`; // passing current date as link download value
+  link.href = canvas.toDataURL(); // passing canvasData as link href value
+  link.click(); // clicking link to download image
 });
 
 window.onload = init();

@@ -20,42 +20,44 @@
             <canvas id="canvas"></canvas>
         </div>
         <div class="toolbar">
-            <div class="row">
+            <div class="tool-category">
                 <label class="title">Options</label>
                 <ul class="options">
-                    <li class="option active tool" id="brush">
+                    <li class="option tool" id="brush" style="font-weight: bolder;">
                         <img src="icons/brush.svg" alt="brush" />
                         <span>Brush</span>
                     </li>
-                    <li class="option tool" id="eraser">
+                    <li class="option tool" id="eraser" style="font-weight: normal;">
                         <img src="icons/eraser.svg" alt="eraser" />
                         <span>Eraser</span>
-                    </li>
-                    <li class="option">
-                        <input type="range" id="pen-slider" min="1" max="30" value="5">
                     </li>
                 </ul>
             </div>
 
-            <div class="row">
+            <div class="tool-category">
+                <label class="title">Size</label>
+                <ul class="options">
+                    <li class="option">
+                        <input type="range" id="size-slider" min="1" max="30" value="5">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tool-category">
                 <label class="title">Colors</label>
                 <ul class="options">
-                    <li id="brush-color-select">
-                        <input type="color" id="color-input"/>
+                    <li class="option color-select" id="brush-color-select">
+                        <input type="color" id="brush-color"/>
                         <span>Brush</span>
                     </li>
-                    <li id="fill-color-select">
-                        <input type="color" id="color-fill" />
-                        <span>Fill</span>
-                    </li>
-                    <li id="background-color-select">
-                        <input type="color" id="color-background" />
+                    <li class="option color-select" id="background-color-select">
+                        <input type="color" id="background-color" />
                         <span>Background</span>
                     </li>
                 </ul>
             </div>
 
-            <div class="row">
+            <div class="tool-category">
                 <button id="button-clear">Clear</button>
                 <button id="button-save">Save as Image</button>
             </div>
